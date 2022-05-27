@@ -6,7 +6,7 @@
 }
 
 .hero-bgC {
-  background-image: url('../images/hero.jpg');
+  background-image: url('http://res.cloudinary.com/husseincloud/image/upload/v1653661523/ln0fqdgxpud6eye7rybm.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -111,39 +111,6 @@ a.tm-text-primary:hover {
   border: 1px solid #cccccc;
   background: #f4f4f4;
   text-align: center;
-}
-
-.nav-item {
-  margin-right: 30px;
-}
-.nav-item:last-child {
-  margin-right: 0;
-}
-
-.nav-link {
-  color: #666666;
-  border-bottom: 4px solid transparent;
-  font-size: 1.2rem;
-}
-
-.nav-link-1.active,
-.nav-link-1:hover {
-  border-color: #33ccff;
-}
-
-.nav-link-2.active,
-.nav-link-2:hover {
-  border-color: #ff6666;
-}
-
-.nav-link-3.active,
-.nav-link-3:hover {
-  border-color: #33cc66;
-}
-
-.nav-link-4.active,
-.nav-link-4:hover {
-  border-color: #cc66cc;
 }
 
 .tm-search-input {
