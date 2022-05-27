@@ -1,12 +1,11 @@
 .img-fluid-re {
   object-fit: cover;
-
   width: 377px;
   height: 210px;
 }
 
 .hero-bgC {
-  background-image: url('../img/hero.jpg');
+  background-image: url('https://res.cloudinary.com/husseincloud/image/upload/v1653661523/ln0fqdgxpud6eye7rybm.jpg');
   background-size: cover;
   background-position: center;
 }
