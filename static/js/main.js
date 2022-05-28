@@ -2,10 +2,11 @@ const opens = document.querySelectorAll('.open');
 const modals = document.querySelectorAll('.modal-bg');
 const modalClose = document.querySelectorAll('.modal-close');
 const modalClose2 = document.querySelectorAll('.modal-close2');
-console.log('Connected');
+// const btn_copys = document.querySelectorAll('.btn_copy');
+// console.log('Connected');
 opens.forEach((btn, index) => {
   btn.addEventListener('click', () => {
-    console.log(`${index}: clicked`);
+    // console.log(`${index}: clicked`);
     const modalClicked = modals[index];
     modalClicked.classList.add('bg-active');
   });
@@ -23,6 +24,12 @@ modalClose2.forEach((ele, index) => {
     modalClicked.classList.remove('bg-active');
   });
 });
+
+// btn_copys.forEach((btn, index) => {
+//   btn.addEventListener('click', () => {
+//     console.log(`${index}: clicked`);
+//   });
+// });
 
 // function copyAndClip(id) {
 //   let copyText = document.getElementById(id);
