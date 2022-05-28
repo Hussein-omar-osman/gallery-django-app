@@ -18,6 +18,18 @@ def searchPage(request):
         Q(location__name__icontains=q) |
         Q(category__name__icontains=q)
         )
+   if request.method == 'POST':
+      q = request.POST.get('search')
+      print(q)
+      images = Image.objects.filter(
+        Q(name__icontains=q) |
+        Q(location__name__icontains=q) |
+        Q(category__name__icontains=q)
+        )
+      context = {'images':images, 'q':q}
+      return render(request, 'pictures/search_results.html', context)
+      
+      
    # images = Image.objects.all()
    context = {'images':images, 'q':q}
    return render(request, 'pictures/search_results.html', context)
