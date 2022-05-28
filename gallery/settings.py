@@ -14,6 +14,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-w0$$08d)g$)_0r*j+8xzte2ao9kd5x_++&0ey5@a8hcq1!c5-p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['breezway-gallery.herokuapp.com']
 
 
 # Application definition
@@ -87,13 +88,24 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 #     }
 # }
 
+# DATABASES={
+#    'default':{
+#       'ENGINE':'django.db.backends.postgresql_psycopg2',
+#       'NAME':'gallery_web',
+#       'USER':'postgres',
+#       'PASSWORD':'mwas6190',
+#       'HOST':'localhost',
+#       'PORT':'5432',
+#    }
+# }
+
 DATABASES={
    'default':{
       'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'gallery_web',
-      'USER':'postgres',
-      'PASSWORD':'mwas6190',
-      'HOST':'localhost',
+      'NAME':'daphgls2emrecg',
+      'USER':'tbygkuyzocnaud',
+      'PASSWORD':'3e625b5d2be94c72cc078933197591ac46a2f74c47b57f60f68ea5ad6467c9fb',
+      'HOST':'ec2-54-204-56-171.compute-1.amazonaws.com',
       'PORT':'5432',
    }
 }
@@ -133,7 +145,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
@@ -144,7 +156,7 @@ cloudinary.config(
   api_key = "587435562281821", 
   api_secret = "rtGxXIW3b97zR-u2GsWELp0YjVk" 
 )
-
+django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
