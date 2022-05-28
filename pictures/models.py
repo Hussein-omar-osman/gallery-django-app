@@ -20,5 +20,7 @@ class Image(models.Model):
   picture = CloudinaryField('picture')
   description = models.TextField(null=True, blank=True)
   created = models.DateTimeField(auto_now_add=True)
+  class Meta:
+   ordering = ['-created']
   def __str__(self):
       return self.name

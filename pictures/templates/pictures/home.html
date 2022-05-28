@@ -52,34 +52,48 @@
         </div>
       </div>
       <div class="row tm-mb-90 tm-gallery">
+        {% for image in images %}
+
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
           <figure class="effect-ming tm-video-item">
             <img
-              src="{% static 'images/img-03.jpg' %}"
+              src="{{image.picture.url}}"
               alt="Image"
               class="img-fluid img-fluid-re"
             />
             <figcaption
               class="d-flex align-items-center justify-content-center"
             >
-              <h2>Clocks</h2>
+              <h2>{{image.category.name}}</h2>
               <a href="#" class="open">View more</a>
             </figcaption>
           </figure>
           <div class="d-flex justify-content-between tm-text-gray">
-            <span class="tm-text-gray-light">18 Oct 2020</span>
-            <span>9,906 views</span>
+            <span class="tm-text-gray-light"
+              >{{image.created | timesince}}</span
+            >
+            <span>{{image.location.name}}</span>
           </div>
           <!-- Modal -->
           <div class="modal-bg">
             <div class="modal-cont">
-              <h5 class="modal-title">Image Details</h5>
+              <h5 class="modal-title">{{image.name}}</h5>
               <div class="model-cont">
                 <img
-                  src="{% static 'images/img-03.jpg' %}"
+                  src="{{image.picture.url}}"
                   alt="Image"
                   style="max-width: 80%; max-height: 80%"
                 />
+              </div>
+              <div class="model-cont" style="margin-top: 10px">
+                <div>
+                  <p>Category:</p>
+                  <span>{{image.category.name}}</span>
+                </div>
+                <div>
+                  <p>Location:</p>
+                  <span>{{image.location.name}}</span>
+                </div>
               </div>
 
               <div class="modal-footer">
@@ -90,6 +104,7 @@
             </div>
           </div>
         </div>
+        {% endfor %}
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
           <figure class="effect-ming tm-video-item">
             <img

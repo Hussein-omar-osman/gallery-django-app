@@ -1,13 +1,13 @@
 from django.shortcuts import redirect, render
+from .models import Image
 
 
 # Create your views here.
 def homePage(request):
-   context = {}
+   images = Image.objects.all()
+   context = {'images':images}
    return render(request, 'pictures/home.html', context)
   
-def homePage2(request):
-   context = {}
-   return render(request, 'pictures/home2.html', context)
+
   
   

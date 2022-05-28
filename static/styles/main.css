@@ -670,11 +670,12 @@ select:not([multiple]) {
 
 .model-cont {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+  margin: 0 100px;
 }
 
-.label {
+/* .label {
   padding: 10px;
   font-size: 18px;
   color: #111;
@@ -703,7 +704,7 @@ select:not([multiple]) {
   outline: none;
   border-radius: 10px;
   cursor: pointer;
-}
+} */
 
 .model-cont-copy {
   max-width: 30%;
