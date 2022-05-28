@@ -23,7 +23,14 @@
     <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
   </head>
   <body>
-    <h1>Add Image</h1>
+    {%load cloudinary%}
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h2>Add Image</h2>
+      {{form.as_p}}
+      <input type="submit" value="Upload Image" />
+    </form>
+
     <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
       <div class="container-fluid tm-container-small">
         <div class="row">

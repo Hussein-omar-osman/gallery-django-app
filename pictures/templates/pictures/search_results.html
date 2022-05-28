@@ -69,7 +69,7 @@
           data-bs-toggle="modal"
           data-bs-target="#{{image.id}}"
         >
-          <figure class="effect-ming tm-video-item">
+          <figure class="effect-ming tm-video-item open">
             <img
               src="{{image.picture.url}}"
               alt="Image"
@@ -79,7 +79,6 @@
               class="d-flex align-items-center justify-content-center"
             >
               <h2>{{image.category.name}}</h2>
-              <a href="#" class="open">View more</a>
             </figcaption>
           </figure>
           <div class="d-flex justify-content-between tm-text-gray">
@@ -109,16 +108,27 @@
                   <span>{{image.location.name}}</span>
                 </div>
               </div>
-              <div>
-                <a href="{{image.picture.url}}" target="_blank"
-                  >{{image.picture.url}}</a
+              <div style="max-width: 80%; margin: 10px auto">
+                <input
+                  type="text"
+                  value="{{image.picture.url}}"
+                  id="{{image.id}}"
+                  style="width: 50%; padding: 10px; border-radius: 10px"
+                />
+                <button
+                  class="btn btn-success"
+                  onclick="copyAndClip('{{image.id}}')"
+                  style="border-radius: 10px"
+                  id="{{image.id}}b"
                 >
+                  <i class="fas fa-copy"></i>
+                </button>
               </div>
               <div class="modal-footer">
                 <button class="btn btn-secondary modal-close2">Close</button>
               </div>
 
-              <span class="modal-close">X</span>
+              <span class="modal-close">&times;</span>
             </div>
           </div>
         </div>

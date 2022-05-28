@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.db.models import Q
 from .models import Image
 from .forms import ImageForm
+from cloudinary.forms import cl_init_js_callbacks
 
 
 # Create your views here.
@@ -37,6 +38,12 @@ def searchPage(request):
 
 
 def addPage(request):
+   if request.method == 'POST':
+      form = ImageForm(request.POST, request.FILES)
+      if form.is_valid():
+         form.save()
+         print(request.POST)
+         return redirect ('homePage')
    form = ImageForm()
    context = {'form':form}
    return render(request, 'pictures/add_image.html', context)
