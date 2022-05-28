@@ -48,12 +48,16 @@
       <div class="row mb-4">
         <h2 class="col-6 tm-text-primary">Latest Photos</h2>
         <div class="col-6 d-flex justify-content-end align-items-center">
-          <button class="btn btn-outline-success">
+          <a href="{% url 'homePage' %}" class="btn btn-outline-success">
             <i class="fas fa-home"></i>
-          </button>
-          <button class="btn btn-outline-success">
+          </a>
+          <a
+            href="{% url 'homePage' %}"
+            class="btn btn-outline-success"
+            style="margin: 0 30px"
+          >
             <i class="fas fa-add"></i>
-          </button>
+          </a>
         </div>
       </div>
       <div class="row tm-mb-90 tm-gallery">
@@ -118,45 +122,6 @@
           </div>
         </div>
         {% endfor %}
-
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
-          <figure class="effect-ming tm-video-item">
-            <img
-              src="{% static 'images/img-05.jpg' %}"
-              alt="Image"
-              class="img-fluid img-fluid-re"
-            />
-            <figcaption
-              class="d-flex align-items-center justify-content-center"
-            >
-              <h2>Clocks</h2>
-              <a href="#" class="open">View more</a>
-            </figcaption>
-          </figure>
-          <div class="d-flex justify-content-between tm-text-gray">
-            <span class="tm-text-gray-light">18 Oct 2020</span>
-            <span>9,906 views</span>
-          </div>
-          <!-- Modal -->
-          <div class="modal-bg">
-            <div class="modal-cont">
-              <h5 class="modal-title">Image Details</h5>
-              <div class="model-cont">
-                <img
-                  src="{% static 'images/img-05.jpg' %}"
-                  alt="Image"
-                  style="max-width: 80%; max-height: 80%"
-                />
-              </div>
-
-              <div class="modal-footer">
-                <button class="btn btn-secondary modal-close2">Close</button>
-              </div>
-
-              <span class="modal-close">X</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -173,7 +138,10 @@
           <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
             <h3 class="tm-text-primary mb-4 tm-footer-title">Our Links</h3>
             <ul class="tm-footer-links pl-0">
-              <li><i class="fas fa-home"></i><a href="#">Home</a></li>
+              <li>
+                <i class="fas fa-home"></i
+                ><a href="{% url 'homePage' %}">Home</a>
+              </li>
               <li><i class="fas fa-add"></i><a href="#">Add</a></li>
             </ul>
           </div>

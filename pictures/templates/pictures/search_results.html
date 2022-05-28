@@ -46,13 +46,17 @@
     <div class="container-fluid tm-container-content tm-mt-60">
       <div class="row mb-4">
         <h2 class="col-6 tm-text-primary">
-          Results of ({{q}}) ({{images.count}})
+          Results of ({{q}}) : ({{images.count}})
         </h2>
         <div class="col-6 d-flex justify-content-end align-items-center">
           <a href="{% url 'homePage' %}" class="btn btn-outline-success">
             <i class="fas fa-home"></i>
           </a>
-          <a href="{% url 'homePage' %}" class="btn btn-outline-success">
+          <a
+            href="{% url 'homePage' %}"
+            class="btn btn-outline-success"
+            style="margin: 0 30px"
+          >
             <i class="fas fa-add"></i>
           </a>
         </div>
@@ -135,7 +139,10 @@
           <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
             <h3 class="tm-text-primary mb-4 tm-footer-title">Our Links</h3>
             <ul class="tm-footer-links pl-0">
-              <li><i class="fas fa-home"></i><a href="#">Home</a></li>
+              <li>
+                <i class="fas fa-home"></i
+                ><a href="{% url 'homePage' %}">Home</a>
+              </li>
               <li><i class="fas fa-add"></i><a href="#">Add</a></li>
             </ul>
           </div>
