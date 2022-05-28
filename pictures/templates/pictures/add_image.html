@@ -24,12 +24,39 @@
   </head>
   <body>
     {%load cloudinary%}
+    <div class="content-section login-page shadow p-4 mb-5 bg-body rounded" style="max-width: 80%; margin:40px auto;">
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      <h2>Add Image</h2>
-      {{form.as_p}}
-      <input type="submit" value="Upload Image" />
+      <fieldset class="form-group mt-2 mb-2">
+      <legend class="border-bottom mb-4 text-center">Upload Image</legend>
+      <div class="form-group mt-2">
+        <label for="" class="form-control-label">Name</label>
+        {{form.name}}
+      </div>
+      <div class="form-group mt-2 mb-2">
+         <label for="" class="form-control-label">Location</label>
+        {{form.location}}       
+      </div>
+      <div class="form-group mt-2 mb-2">
+         <label for="" class="form-control-label">Category</label>
+        {{form.category}}       
+      </div>
+      <div class="form-group mt-2 mb-2">
+         <label for="" class="form-control-label">Picture</label>
+        {{form.picture}}       
+      </div>
+      <div class="form-group mt-2 mb-2">
+         <label for="" class="form-control-label">Description</label>
+        {{form.description}}       
+      </div>
+      
+      <input type="submit" value="Upload Image" class="btn btn-outline-success"/>
+      </fieldset>
     </form>
+    </div>
+</div>
+
+
 
     <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
       <div class="container-fluid tm-container-small">
