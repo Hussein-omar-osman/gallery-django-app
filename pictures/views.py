@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.db.models import Q
 from .models import Image
+from .forms import ImageForm
 
 
 # Create your views here.
@@ -33,6 +34,12 @@ def searchPage(request):
    # images = Image.objects.all()
    context = {'images':images, 'q':q}
    return render(request, 'pictures/search_results.html', context)
+
+
+def addPage(request):
+   form = ImageForm()
+   context = {'form':form}
+   return render(request, 'pictures/add_image.html', context)
   
 
   
