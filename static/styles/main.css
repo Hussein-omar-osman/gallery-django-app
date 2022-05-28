@@ -707,6 +707,14 @@ select:not([multiple]) {
 } */
 
 .model-cont-copy {
-  max-width: 30%;
-  margin: 10px auto;
+  /* max-width: 60%; */
+
+  margin: 20px 300px;
+  margin-top: 20px;
+}
+
+.model-cont-copy .copy_input {
+  padding: 10px;
+  max-width: 200px;
+  border-radius: 15px;
 }
